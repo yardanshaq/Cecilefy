@@ -4,7 +4,7 @@ const p = require("../../package.json");
 module.exports = {
   openapi: "3.0.0",
   info: {
-    title: "Cecilefy.xyz",
+    title: "Cecilefy",
     description: "API reference for [http://cecilefy.xyz](http://cecilefy.xyz).\n",
     version: p.version
   },
