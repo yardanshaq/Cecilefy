@@ -3,10 +3,10 @@ services:
     build:
       context: .
     volumes:
-       - db_data_sqlite:/var/lib/kutt
-       - custom:/kutt/custom
+       - db_data_sqlite:/var/lib/cecilefy
+       - custom:/cecilefy/custom
     environment:
-      DB_FILENAME: "/var/lib/kutt/data.sqlite"
+      DB_FILENAME: "/var/lib/cecilefy/data.sqlite"
     ports:
       - 3000:3000
 volumes:
