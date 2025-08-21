@@ -12,6 +12,11 @@
     </label>
     <button type="submit">Log in</button>
   </form>
+  {{#if mail_enabled}}
+  <p class="forgot-password">
+    <a href="/reset-password" title="Reset password">Forgot your password?</a>
+  </p>
+  {{/if}}
   <p>Don't have an account? <a href="/register">Sign up</a></p>
 </main>
 
