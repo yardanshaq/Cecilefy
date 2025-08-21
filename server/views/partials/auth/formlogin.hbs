@@ -1,23 +1,29 @@
-<main class="auth-main">
-  <form id="login-form" hx-post="/api/auth/login" hx-swap="outerHTML">
-    <label class="{{#if errors.email}}error{{/if}}">
-      Email:
-      <input name="email" type="email" placeholder="Email address..." />
-      {{#if errors.email}}<p class="error">{{errors.email}}</p>{{/if}}
-    </label>
+<form id="login-form" class="login-signup" hx-post="/api/auth/login" hx-swap="outerHTML">
+  <label class="{{#if errors.email}}error{{/if}}">
+    Email address:
+    <input name="email" type="email" placeholder="Email address..." hx-preserve="true" />
+    {{#if errors.email}}<p class="error">{{errors.email}}</p>{{/if}}
+  </label>
 
-    <label class="{{#if errors.password}}error{{/if}}">
-      Password:
-      <input name="password" type="password" placeholder="Password..." />
-      {{#if errors.password}}<p class="error">{{errors.password}}</p>{{/if}}
-    </label>
+  <label class="{{#if errors.password}}error{{/if}}">
+    Password:
+    <input name="password" type="password" placeholder="Password..." hx-preserve="true" />
+    {{#if errors.password}}<p class="error">{{errors.password}}</p>{{/if}}
+  </label>
 
-    <div class="buttons-wrapper">
-      <button type="submit" class="primary login full">
-        Log in
-      </button>
-      <a href="/reset-password" class="forgot-password">Forgot password?</a>
-    </div>
-    <p>Don't have an account? <a href="/register">Sign up</a></p>
-  </form>
-</main>
+  <div class="buttons-wrapper">
+    <button type="submit" class="primary login {{#if disallow_registration}}full{{else}}{{#unless mail_enabled}}full{{/unless}}{{/if}}">
+      <span>{{> icons/login}}</span>
+      <span>{{> icons/spinner}}</span>
+      Log in
+    </button>
+    <a class="forgot-password" href="/reset-password" title="Reset password">Forgot your password?</a>
+  </div>
+
+  {{#unless errors}}
+    {{#if error}}
+      <p class="error">{{error}}</p>
+    {{/if}}
+  {{/unless}}
+  <p>Don't have an account? <a href="/register">Sign up</a></p>
+</form>
