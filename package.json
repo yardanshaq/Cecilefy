@@ -1,5 +1,5 @@
 {
-  "name": "kutt",
+  "name": "cecilefy",
   "version": "3.2.3",
   "description": "Modern URL shortener.",
   "main": "./server/server.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thedevs-network/kutt.git"
+    "url": "git+https://github.com/yardanshaq/cecilefy.git"
   },
   "keywords": [
     "url-shortener"
@@ -20,9 +20,9 @@
   "author": "Pouria Ezzati <ezzati.upt@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thedevs-network/kutt/issues"
+    "url": "https://github.com/yardanshaq/cecilefy/issues"
   },
-  "homepage": "https://github.com/thedevs-network/kutt#readme",
+  "homepage": "https://github.com/yardanshaq/cecilefy#readme",
   "dependencies": {
     "bcryptjs": "2.4.3",
     "better-sqlite3": "11.8.1",
