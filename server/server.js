@@ -15,6 +15,10 @@ const links = require("./handlers/links.handler");
 const routes = require("./routes");
 const utils = require("./utils");
 
+const fs = require("fs");
+const path = require("path");
+const dbDir = path.dirname(process.env.DB_FILENAME);
+if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
 
 // run the cron jobs
 // the app might be running in cluster mode (multiple instances) so run the cron job only on one cluster (the first one)
