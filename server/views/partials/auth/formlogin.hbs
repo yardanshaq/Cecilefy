@@ -1,19 +1,23 @@
-<main>
+<main class="auth-main">
   <form id="login-form" hx-post="/api/auth/login" hx-swap="outerHTML">
-    <label>
+    <label class="{{#if errors.email}}error{{/if}}">
       Email:
-      <input type="email" name="email" placeholder="Email address..." required />
+      <input name="email" type="email" placeholder="Email address..." />
+      {{#if errors.email}}<p class="error">{{errors.email}}</p>{{/if}}
     </label>
-    <label>
+
+    <label class="{{#if errors.password}}error{{/if}}">
       Password:
-      <input type="password" name="password" placeholder="Password..." required />
+      <input name="password" type="password" placeholder="Password..." />
+      {{#if errors.password}}<p class="error">{{errors.password}}</p>{{/if}}
     </label>
-    <button type="submit">Log in</button>
+
+    <div class="buttons-wrapper">
+      <button type="submit" class="primary login full">
+        Log in
+      </button>
+      <a href="/reset-password" class="forgot-password">Forgot password?</a>
+    </div>
+    <p>Don't have an account? <a href="/register">Sign up</a></p>
   </form>
-  {{#if mail_enabled}}
-  <p class="forgot-password">
-    <a href="/reset-password" title="Reset password">Forgot your password?</a>
-  </p>
-  {{/if}}
-  <p>Don't have an account? <a href="/register">Sign up</a></p>
 </main>
