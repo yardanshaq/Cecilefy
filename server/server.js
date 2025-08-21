@@ -77,7 +77,6 @@ app.get("*", renders.notFound);
 // handle errors coming from above routes
 app.use(helpers.error);
 
-const env = require("./env");
 const { createUserIfNotExist } = require("./handlers/users.handler");
 
 async function initFirstAdmin() {
