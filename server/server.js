@@ -76,6 +76,26 @@ app.get("*", renders.notFound);
 
 // handle errors coming from above routes
 app.use(helpers.error);
+
+const env = require("./env");
+const { createUserIfNotExist } = require("./handlers/users.handler");
+
+async function initFirstAdmin() {
+  if (env.FIRST_ADMIN_AUTOCREATE) {
+    const exists = await checkIfAdminExists();
+    if (!exists) {
+      await createUserIfNotExist({
+        username: env.DEFAULT_ADMIN_USERNAME,
+        password: env.DEFAULT_ADMIN_PASSWORD,
+        role: "admin"
+      });
+      console.log("First admin created!");
+    }
+  }
+}
+
+initFirstAdmin();
+
   
 app.listen(env.PORT, () => {
   console.log(`> Ready on http://localhost:${env.PORT}`);
