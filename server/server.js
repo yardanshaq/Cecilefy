@@ -16,7 +16,6 @@ const routes = require("./routes");
 const utils = require("./utils");
 
 const fs = require("fs");
-const path = require("path");
 const dbDir = path.dirname(process.env.DB_FILENAME);
 if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
 
