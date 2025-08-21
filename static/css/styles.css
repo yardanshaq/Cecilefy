@@ -2319,3 +2319,104 @@ svg.map path.active { stroke: hsl(261, 46%, 50%); stroke-width: 1.5; }
   #apikey p { font-size: 0.85rem; }
   #apikey .clipboard { width: 22px; height: 22px; }
 }
+
+.introduction {
+  width: 1200px;
+  max-width: 98%;
+  display: flex;
+  align-items: center;
+  margin: 150px 0 0;
+}
+
+.introduction .text-wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: -32px;
+}
+
+.introduction h2 {
+  font-weight: 300;
+  font-size: 28px;
+  padding-right: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.introduction img {
+  width: 60%;
+  flex: 0 0 60%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* FEATURES */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 0 0 auto;
+  padding: 5rem 0;
+  margin: 0;
+  background-color: var(--features-bg);
+}
+
+.features h3 {
+  font-weight: 300;
+  font-size: 28px;
+  margin-bottom: 72px;
+}
+
+.features ul {
+  width: 1200px;
+  max-width: 100%;
+  flex: 1 1 auto;
+  justify-content: center;
+  flex-wrap: nowrap;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features ul li {
+  max-width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+  margin: 0;
+}
+
+.features ul li .icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: var(--color-primary);
+}
+
+.features ul li .icon svg {
+  width: 16px;
+  height: auto;
+  stroke: white;
+  stroke-width: 2px;
+}
+
+.features ul li h4 {
+  margin: 1rem;
+  padding: 0;
+  font-size: 15px;
+}
+
+.features ul li p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+}
