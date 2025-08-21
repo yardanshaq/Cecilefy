@@ -1,5 +1,8 @@
 {{> header}}
 {{> shortener}}
+{{#unless user}}
+  {{> introduction}}   <!-- tampil hanya kalau user belum login -->
+{{/unless}}
 {{#if user}}
   {{> links/table}}
 {{/if}}
