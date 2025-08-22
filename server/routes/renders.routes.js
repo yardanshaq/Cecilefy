@@ -25,8 +25,10 @@ router.get(
   asyncHandler(renders.login)
 );
 
-// halaman signup (kamu tambahin disini)
-router.get("/signup", locals.view("signup"));
+router.get(
+  "/signup",
+  asyncHandler(renders.signup)
+);
 
 router.get(
   "/logout", 
