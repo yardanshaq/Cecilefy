@@ -12,7 +12,7 @@ const router = Router();
 
 router.post(
   "/login",
-  locals.viewTemplate("partials/auth/form-login"),
+  locals.viewTemplate("partials/auth/form"),
   validators.login,
   asyncHandler(helpers.verify),
   helpers.rateLimit({ window: 60, limit: 5 }),
@@ -22,7 +22,7 @@ router.post(
 
 router.post(
   "/signup",
-  locals.viewTemplate("partials/auth/form-signup"),
+  locals.viewTemplate("partials/auth/form"),
   auth.featureAccess([!env.DISALLOW_REGISTRATION, env.MAIL_ENABLED]),
   validators.signup,
   asyncHandler(helpers.verify),
