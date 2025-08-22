@@ -26,11 +26,6 @@ router.get(
 );
 
 router.get(
-  "/signup",
-  asyncHandler(renders.signup)
-);
-
-router.get(
   "/logout", 
   asyncHandler(renders.logout)
 );
