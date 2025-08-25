@@ -9,10 +9,17 @@
   <link rel="apple-touch-icon" href="/images/favicon-196x196.png" />
   <link rel="mask-icon" href="/images/icon.svg" color="blue" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <meta name="description" content="Cecilefy adalah URL shortener modern, gratis, dan open-source dengan custom domain & statistik." />
+
+  <!-- SEO & PWA -->
+  <meta name="description" content="{{site_name}} adalah URL shortener modern, gratis, dan open-source dengan custom domain & statistik." />
   <meta name="keywords" content="cecilefy, url shortener, link shortener, short url, custom domain shortener" />
-  <meta name="author" content="Cecilefy" />
+  <meta name="author" content="{{site_name}}" />
   <meta name="theme-color" content="#f3f3f3" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Social Meta -->
   <meta property="fb:app_id" content="123456789" />
   <meta name="htmx-config" content='{"withCredentials":true}'>
   <meta property="og:url" content="https://{{default_domain}}" />
@@ -20,11 +27,15 @@
   <meta property="og:title" content="{{site_name}}" />
   <meta property="og:image" content="https://{{default_domain}}/images/card.png" />
   <meta property="og:description" content="Free & Open Source Modern URL Shortener" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="{{site_name}}" />
+
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://{{default_domain}}" />
   <meta name="twitter:title" content="{{site_name}}" />
   <meta name="twitter:description" content="Free & Open Source Modern URL Shortener" />
   <meta name="twitter:image" content="https://{{default_domain}}/images/card.png" />
-  <meta name="description" content="{{site_name}} is a free and open source URL shortener with custom domains and stats." />
+
   <title>{{site_name}} | {{title}}</title>
   <link rel="stylesheet" href="/css/styles.css">
   {{#each custom_styles}}
@@ -38,6 +49,21 @@
   </div>
 
   {{{block "scripts"}}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Cecilefy",
+    "url": "https://cecilefy.xyz",
+    "description": "Cecilefy adalah URL shortener modern, gratis, dan open-source dengan custom domain & statistik.",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All",
+    "creator": {
+      "@type": "Person",
+      "name": "Yardan Shaquille Herlanda"
+    }
+  }
+  </script>
   <script src="/libs/htmx.min.js"></script>
   <script src="/libs/qrcode.min.js"></script>
   <script src="/scripts/main.js"></script>
