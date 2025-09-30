@@ -8,7 +8,7 @@ services:
     environment:
       DB_FILENAME: "/var/lib/cecilefy/data.sqlite"
     ports:
-      - 6557:6557
+      - 3000:3000
 volumes:
   db_data_sqlite:
   custom:
