@@ -19,7 +19,7 @@ RUN mkdir -p /var/lib/cecilefy
 COPY . .
 
 # expose the port that the app listens on
-EXPOSE 6557
+EXPOSE 3000
 
 # intialize database and run the app
 CMD npm run migrate && npm start
